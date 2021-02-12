@@ -1,0 +1,157 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body {
+      font-family: "Josefin Sans", sans-serif;
+      overflow-x: hidden;
+}
+
+h1 {
+      font-size: 2.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.625rem;
+      line-height: 1.2;
+}
+
+section {
+      max-width: 100vw;
+      width: 100%;
+      min-height: 100vh;
+      background: hsl(0, 100%, 98%);
+}
+
+header {
+      padding: 1.5625rem;
+}
+
+.hero img {
+      width: 100%;
+      height: 100%;
+}
+
+.main__article {
+      padding: 3.75rem 1.6875rem;
+      text-align: center;
+}
+
+.main__article span {
+      color: hsl(0, 36%, 70%);
+      font-weight: 300;
+}
+
+.main__article p {
+      font-size: 0.875rem;
+      padding-top: 1.6875rem;
+      padding-bottom: 1.6875rem;
+      line-height: 1.4;
+      color: hsl(0, 36%, 70%);
+}
+
+form {
+      display: block;
+      position: relative;
+}
+
+form input {
+      width: 100%;
+      padding: 1.125rem;
+      border-radius: 3.125rem;
+      outline: none;
+      border: 1px solid rgb(206, 151, 151, 0.5);
+      background: transparent;
+}
+
+form input::placeholder {
+      color: hsl(0, 36%, 70%);
+      opacity: 0.5;
+}
+
+form input.error {
+      border: solid 2px hsl(0, 93%, 68%);
+      background-image: url(../images/icon-error.svg);
+      background-repeat: no-repeat;
+      background-position: 75% center;
+      color: hsl(0, 6%, 24%);
+}
+
+.validation {
+      width: 90%;
+      position: absolute;
+      bottom: -1.5625rem;
+      left: 3.125rem;
+      color: red;
+      font-size: 0.875rem;
+}
+
+form button {
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      box-shadow: 0px 5px 20px rgb(0 0 0 / 30%);
+      outline: none;
+      border: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 20%;
+      border-radius: 3.125rem;
+      cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+      section {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 12.5rem auto;
+            grid-template-areas: "header hero" "article hero";
+            background: url(../images/bg-pattern-desktop.svg) 0% 100% no-repeat;
+            background-size: 60% 100%;
+      }
+
+      picture {
+            grid-area: hero;
+            max-height: 100vh;
+      }
+
+      article {
+            grid-area: article;
+      }
+
+      header {
+            grid-area: header;
+            padding: 3.75rem 21% 0;
+      }
+
+      .main__article {
+            padding: 0 32% 0 20%;
+            text-align: left;
+      }
+
+      h1 {
+            font-size: 3.75rem;
+      }
+
+      .main__article p {
+            font-size: 0.9375rem;
+            line-height: 2;
+      }
+
+      form button {
+            animation: scale 1.5s ease-in-out infinite alternate;
+      }
+
+      form button:hover {
+            background: #f8bfbf;
+      }
+
+      @keyframes scale {
+            from {
+                  transform: scale(1);
+            }
+            to {
+                  transform: scale(1.2);
+            }
+      }
+}
